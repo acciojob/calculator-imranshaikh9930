@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleEquals() {
     try {
         currentInput = currentInput.replace(/[^-()\d/*+.]/g, '');
-        currentInput = parseFloat(eval(currentInput).toFixed(10)).toString();
+        currentInput = parseInt(eval(currentInput).toFixed(10)).toString();
     } catch (error) {
         currentInput = 'Error';
     }
