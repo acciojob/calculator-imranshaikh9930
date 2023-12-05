@@ -14,16 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Function to handle equals button click
-    function handleEquals() {
-        try {
-            // Explicitly handle addition operation
-            currentInput = currentInput.replace(/[^-()\d/*+.]/g, '');
-            currentInput = eval(currentInput).toString();
-        } catch (error) {
-            currentInput = 'Error';
-        }
-        updateInput();
+  function handleEquals() {
+    try {
+        currentInput = currentInput.replace(/[^-()\d/*+.]/g, '');
+        currentInput = parseFloat(eval(currentInput).toFixed(10)).toString();
+    } catch (error) {
+        currentInput = 'Error';
     }
+    updateInput();
+}
 
     // Function to handle clear button click
     function handleClear() {
